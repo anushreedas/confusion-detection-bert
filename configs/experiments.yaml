@@ -1,0 +1,17 @@
+# The 12 configurations compared in the capstone. Keys are `section.key`.
+# `num_layers` < 12 truncates the pretrained encoder; > 12 appends randomly
+# initialised layers. `freeze6` = freeze embeddings + first 6 layers (inferred
+# from Fig. 4 of the report).
+experiments:
+  bert-base-uncased_2:   {model.base_model: bert-base-uncased, model.num_layers: 2}
+  bert-base-uncased_6:   {model.base_model: bert-base-uncased, model.num_layers: 6}
+  bert-base-uncased_12:  {model.base_model: bert-base-uncased, model.num_layers: 12}
+  bert-base-uncased_14:  {model.base_model: bert-base-uncased, model.num_layers: 14}
+  bert-base-uncased_18:  {model.base_model: bert-base-uncased, model.num_layers: 18}
+  TOD-BERT_2:            {model.base_model: TODBERT/TOD-BERT-JNT-V1, model.num_layers: 2}
+  TOD-BERT_6:            {model.base_model: TODBERT/TOD-BERT-JNT-V1, model.num_layers: 6}
+  TOD-BERT_12:           {model.base_model: TODBERT/TOD-BERT-JNT-V1, model.num_layers: 12}
+  TOD-BERT_14:           {model.base_model: TODBERT/TOD-BERT-JNT-V1, model.num_layers: 14}
+  TOD-BERT_18:           {model.base_model: TODBERT/TOD-BERT-JNT-V1, model.num_layers: 18}
+  bert-base-uncased_12freeze:  {model.base_model: bert-base-uncased, model.num_layers: 12, model.freeze: encoder}
+  bert-base-uncased_12freeze6: {model.base_model: bert-base-uncased, model.num_layers: 12, model.freeze: first_n_layers, model.freeze_first_n: 6}

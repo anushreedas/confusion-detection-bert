@@ -1,0 +1,30 @@
+# Defaults reproduce the hyper-parameters of the original 2021 capstone.
+data:
+  raw_dir: data/raw                  # <raw_dir>/t1/903.csv, t2/903.csv, ...
+  labels_path: data/labels/conf_labels.json
+  processed_dir: data/processed
+  label_decoder: "confusion_bert.data.labels:course_base85_decoder"
+  split_strategy: stratified         # use `group` for a participant-held-out protocol
+  test_size: 0.10
+  val_fraction_of_remaining: 0.16
+  seed: 123
+
+model:
+  base_model: bert-base-uncased
+  num_layers: null                   # null = pretrained depth
+  freeze: none
+  classifier_hidden: 50
+
+train:
+  epochs: 4
+  batch_size: 16
+  lr: 5.0e-5
+  warmup_steps: 200
+  seed: 42
+  select: best_val_macro_f1          # the original notebooks kept the last epoch ("last")
+  output_dir: runs
+
+eval:
+  n_subsamples: 20
+  subsample_fraction: 0.3
+  bootstrap_resamples: 10000

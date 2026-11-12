@@ -1,0 +1,8 @@
+.git
+runs
+data/raw
+data/processed
+notebooks
+docs
+tests
+__pycache__

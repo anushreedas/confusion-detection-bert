@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+.ipynb_checkpoints/
+
+# Data and artefacts are never committed (see data/README.md)
+data/raw/
+data/processed/
+runs/
+*.pt
+*.torch
+*.safetensors
+results/comparison*.csv

@@ -1,0 +1,13 @@
+model,mean_accuracy,min_accuracy,max_accuracy
+bert-base-uncased_2,0.762,0.719,0.787
+bert-base-uncased_6,0.817,0.787,0.835
+bert-base-uncased_12,0.800,0.777,0.833
+bert-base-uncased_14,0.808,0.777,0.843
+bert-base-uncased_18,0.797,0.772,0.820
+TOD-BERT_2,0.764,0.736,0.790
+TOD-BERT_6,0.800,0.777,0.825
+TOD-BERT_12,0.790,0.770,0.820
+TOD-BERT_14,0.789,0.759,0.808
+TOD-BERT_18,0.792,0.764,0.815
+bert-base-uncased_12freeze,0.305,0.268,0.333
+bert-base-uncased_12freeze6,0.814,0.790,0.841
